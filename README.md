@@ -19,7 +19,7 @@ This system allows hospitals and clinics to manage patients, appointments, consu
 
 ## 🛠 Tech Stack
 
-- Java 21
+- Java 17
 - Spring Boot
 - Spring Data JPA
 - MySQL
