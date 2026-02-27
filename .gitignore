@@ -1,0 +1,13 @@
+/target/
+/uploads/
+*.log
+
+# IDE
+/.settings/
+/.classpath
+/.project
+/.idea/
+/.vscode/
+
+# OS
+Thumbs.db
