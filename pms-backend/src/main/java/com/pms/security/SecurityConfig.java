@@ -83,7 +83,10 @@ public class SecurityConfig {
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> 
-                    auth.requestMatchers("/api/auth/**").permitAll()
+                    auth.requestMatchers("/", "/index.html", "/assets/**", "/favicon.ico", "/_redirects").permitAll()
+                        .requestMatchers("/login", "/register", "/forgot-password", "/unauthorized").permitAll()
+                        .requestMatchers("/admin/**", "/doctor/**", "/receptionist/**", "/patient/**").permitAll()
+                        .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/health").permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/api-docs/**", "/v3/api-docs/**").permitAll()
